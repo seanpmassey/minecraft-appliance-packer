@@ -3,10 +3,10 @@
 
  All Minecraft binaries, tools, and scripts are located in /opt/Minecraft.
 
- Tools included:
-    * MCRCON: /opt/Minecraft/tools/mcrcon
-    * PowerShell
-    * JDK 1.17 provided by the Adoptium Temurin project
+Tools included:
+* MCRCON: /opt/Minecraft/tools/mcrcon
+* PowerShell
+* JDK 1.17 provided by the Adoptium Temurin project
 
 Minecraft can be configured pre-deployment using OVF properties. The values entered when deploying the appliance will entered into the server.properties file during the appliance customization phase during the first boot.  This is also when Minecraft will be downloaded from Mojang and installed.  All of the other Minecraft prerequisites are installed when the appliance is built.
 
