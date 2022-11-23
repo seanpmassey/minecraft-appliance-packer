@@ -1,0 +1,22 @@
+[Unit]
+Description=Minecraft Server
+After=network.target
+
+[Service]
+User=minecraft
+Group=minecraft-admins
+Nice=1
+KillMode=none
+SuccessExitStatus=0 1
+ProtectHome=true
+ProtectSystem=full
+PrivateDevices=true
+NoNewPrivileges=true
+ReadWriteDirectories=/opt/Minecraft
+WorkingDirectory=/opt/Minecraft/bin
+ExecStart=java -Xmx4096M -Xms1024M -jar server.jar nogui
+ExecStop=/opt/Minecraft/tools/mcrcon/mcrcon -H 127.0.0.1 -P RCONPORT -p RCONPASSWORD -w 5 "say Server is going down for maintenance.  Please Discconnect." save-all stop ; sleep 5
+#ExecStop=/opt/Minecraft/tools/mcrcon/mcrcon -H 127.0.0.1 -P RCONPORT -p RCONPASSWORD s$
+
+[Install]
+WantedBy=multi-user.target

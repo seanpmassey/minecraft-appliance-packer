@@ -1,0 +1,121 @@
+    <ProductSection ovf:required="true">
+    <Info>Debian Minecraft Appliance</Info>
+      <Product>VMware vSphere Debian Minecraft Appliance</Product>
+      <Vendor>The Virtual Horizon</Vendor>
+      <Version>APPLIANCE_VERSION</Version>
+      <ProductUrl>https://github.com/seanpmassey/</ProductUrl>
+      <VendorUrl>https://thevirtualhorizon.com</VendorUrl>
+      <Category>Networking</Category>
+        <Property ovf:key="guestinfo.hostname" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+            <Label>Hostname</Label>
+            <Description>Hostname of system</Description>
+        </Property>
+        <Property ovf:key="guestinfo.ipaddress" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+            <Label>IP Address</Label>
+            <Description>IP Address of the system (Leave blank for DHCP)</Description>
+        </Property>
+        <Property ovf:key="guestinfo.netprefix" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+            <Label>Network CIDR Prefix</Label>
+            <Description>Network CIDR Prefix (Example: 24)</Description>
+        </Property>
+        <Property ovf:key="guestinfo.gateway" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+            <Label>Gateway</Label>
+            <Description>Gateway of the system (Leave blank for DHCP)</Description>
+        </Property>
+        <Property ovf:key="guestinfo.dns" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+            <Label>DNS</Label>
+            <Description>DNS Servers (space separated)</Description>
+        </Property>
+        <Property ovf:key="guestinfo.domain" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+            <Label>Domain</Label>
+            <Description>Domain</Description>
+        </Property>
+        <Category>OS Credentials</Category>
+        <Property ovf:key="guestinfo.password" ovf:password="true" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+            <Label>Root Password</Label>
+            <Description>Password to login in as root. Please use a secure password</Description>
+        </Property>
+        <Property ovf:key="guestinfo.sshkey" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+            <Label>SSH Public Key</Label>
+            <Description>Leverage an SSH Key to login as root with no password</Description>
+        </Property>
+        <Category>Minecraft Server Properties Configuration</Category>
+        <Property ovf:key="guestinfo.minecraft.version" ovf:type="string" ovf:userConfigurable="true" ovf:value="Latest">
+            <Label>Version</Label>
+            <Description>Minecraft Server Version to Install</Description>
+        </Property>
+        <Property ovf:key="guestinfo.minecraft.serverport" ovf:type="int" ovf:userConfigurable="true" ovf:value="25565">
+            <Label>Server Port</Label>
+            <Description>Minecraft Server Port</Description>
+        </Property>
+        <Property ovf:key="guestinfo.minecraft.enablercon" ovf:type="boolean" ovf:userConfigurable="true" ovf:value="true">
+            <Label>RCON</Label>
+            <Description>Enable RCON</Description>
+        </Property>
+        <Property ovf:key="guestinfo.minecraft.rconport" ovf:type="int" ovf:userConfigurable="true" ovf:value="25575">
+            <Label>RCON Port</Label>
+            <Description>Minecraft Server RCON Port</Description>
+        </Property>
+        <Property ovf:key="guestinfo.minecraft.rconpassword" ovf:password="true" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+            <Label>RCON Password</Label>
+            <Description>RCON Password</Description>
+        </Property>
+        <Property ovf:key="guestinfo.minecraft.maxplayers" ovf:type="int" ovf:userConfigurable="true" ovf:value="20">
+            <Label>Maximum Number of Players</Label>
+            <Description>Set the Maximum Number of Players Allowed on the Server</Description>
+        </Property>
+        <Property ovf:key="guestinfo.minecraft.onlinemode" ovf:type="boolean" ovf:userConfigurable="true" ovf:value="true">
+            <Label>Online Mode</Label>
+            <Description>Allow server to check players against online Minecraft database.</Description>
+        </Property>
+        <Category>Minecraft World Properties Configuration</Category>
+        <Property ovf:qualifiers="ValueMap{&quot;survival&quot;, &quot;creative&quot;, &quot;adventure&quot;, &quot;spectator&quot;}" ovf:userConfigurable="true" ovf:value="survival" ovf:type="string" ovf:key="guestinfo.minecraft.gamemode">
+            <Label>Game Mode</Label>
+            <Description>Set the game mode. Default value is Survival.</Description>
+        </Property>
+        <Property ovf:qualifiers="ValueMap{&quot;peaceful&quot;, &quot;easy&quot;, &quot;normal&quot;, &quot;hard&quot;}" ovf:userConfigurable="true" ovf:value="easy" ovf:type="string" ovf:key="guestinfo.minecraft.difficulty">
+            <Label>Difficulty</Label>
+            <Description>Set the game difficulty level. Default value is Easy.</Description>
+        </Property>
+        <Property ovf:key="guestinfo.minecraft.levelname" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+            <Label>World Name</Label>
+            <Description>Set the World Name</Description>
+        </Property>
+        <Property ovf:key="guestinfo.minecraft.levelseed" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+            <Label>World Seed</Label>
+            <Description>Set the World Seed value used to generate the world. If left blank, a random seed will be generated.</Description>
+        </Property>
+        <Property ovf:qualifiers="ValueMap{&quot;normal&quot;, &quot;flat&quot;, &quot;large_biomes&quot;, &quot;amplified&quot;}" ovf:userConfigurable="true" ovf:value="normal" ovf:type="string" ovf:key="guestinfo.minecraft.leveltype">
+            <Label>World Type</Label>
+            <Description>Determines the type of world that is generated</Description>
+        </Property>
+        <Property ovf:qualifiers="MinValue(1) MaxValue(29999984)" ovf:value="29999984" ovf:userConfigurable="true" ovf:type="uint32" ovf:key="guestinfo.minecraft.maxworldsize">
+            <Label>Max World Size</Label>
+            <Description>Set the maximum block size of the map as a radius.</Description>
+        </Property>
+        <Property ovf:key="guestinfo.minecraft.allownether" ovf:type="boolean" ovf:userConfigurable="true" ovf:value="true">
+            <Label>Allow Nether</Label>
+            <Description>Allow Players to Access the Nether</Description>
+        </Property>
+        <Property ovf:key="guestinfo.minecraft.generatestructures" ovf:type="boolean" ovf:userConfigurable="true" ovf:value="true">
+            <Label>Generate Structures</Label>
+            <Description>Allow structures, villages, and ruins to be generated in new chunks. Dungeons will generate even if set to false.</Description>
+        </Property>
+        <Property ovf:key="guestinfo.minecraft.spawnanimals" ovf:type="boolean" ovf:userConfigurable="true" ovf:value="true">
+            <Label>Spawn Animals</Label>
+            <Description>Allow animals to spawn on server.</Description>
+        </Property>
+        <Property ovf:key="guestinfo.minecraft.spawnmonsters" ovf:type="boolean" ovf:userConfigurable="true" ovf:value="true">
+            <Label>Spawn Monsters</Label>
+            <Description>Allow monsters to spawn on server.</Description>
+        </Property>
+        <Property ovf:key="guestinfo.minecraft.spawnnpcs" ovf:type="boolean" ovf:userConfigurable="true" ovf:value="true">
+            <Label>Spawn NPCs</Label>
+            <Description>Allow NPCs to spawn on server.</Description>
+        </Property>
+        <Category>zDebug</Category>
+        <Property ovf:key="guestinfo.debug" ovf:type="boolean" ovf:userConfigurable="true" ovf:value="false">
+            <Label>Debugging</Label>
+            <Description>Enable Debugging</Description>
+        </Property>
+    </ProductSection>
