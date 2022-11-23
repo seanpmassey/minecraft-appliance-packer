@@ -12,7 +12,7 @@ Minecraft can be configured pre-deployment using OVF properties. The values ente
 
 The appliance will automatically check for new system and Minecraft updates using a CRON job.  The Minecraft updater is a PowerShell script called Upgrade-MinecraftService.ps1. This script is located in /opt/Minecraft/scripts.  The script checks the current version of the Minecraft server by reading the minecraft.properties file and checks for the latest stable release in the Minecraft version manifest file located at "https://launchermeta.mojang.com/mc/game/version_manifest.json." If there is a newer version available and the switch to apply updates is enabled, the newest version of the server file will be downloaded and installed.
 
-Getting Started
+##Getting Started
 To use this template, update the values in the debian.auto.pkrvars.hcl file to match your environment.  Then run the build-minecraft.sh script to start the build process.
 
 Notes:
