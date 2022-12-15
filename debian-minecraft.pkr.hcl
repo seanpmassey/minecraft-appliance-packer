@@ -79,7 +79,7 @@ build {
 
   provisioner "shell" {
     environment_vars = ["DEBIAN_FRONTEND=noninteractive"]
-    scripts          = ["scripts/debian-update.sh", "scripts/debian-system.sh", "scripts/debian-vmware.sh", "scripts/debian-minecraftprereqs.sh", "scripts/debian-minecraftsetup.sh", "scripts/debian-minecraftsettings.sh"]
+    scripts          = ["scripts/debian-update.sh", "scripts/debian-system.sh", "scripts/debian-vmware.sh", "scripts/debian-minecraftsetup.sh", "scripts/debian-minecraftsettings.sh"]
   }
 
   provisioner "file" {
