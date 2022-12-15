@@ -173,7 +173,7 @@ CRON_FILE="/var/spool/cron/root"
 
     if [ "$VERSION" = "Latest" ]; then
         echo "> Latest version selected. Configuring server to automatically update Minecraft."
-        echo '* 2-4 * * * pwsh -noprofile -command "/opt/Minecraft/scripts/Upgrade-MinecraftService.ps1 -ApplyUpdate $true" ' >> $CRON_FILE
+        echo '* 2-4 * * * pwsh -noprofile -command "/opt/Minecraft/scripts/Upgrade-MinecraftService.ps1 -ApplyUpgrade $True" ' >> $CRON_FILE
 
         else
         echo "> ${VERSION} specified. Minecaft Server automatic updates disabled."
