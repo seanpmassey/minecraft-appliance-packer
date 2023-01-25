@@ -21,6 +21,12 @@ apt-get install -y \
 
 echo '> Done'
 
+echo '> Configure UFW Firewall...'
+ufw allow ssh
+ufw enable
+
+echo '> Done'
+
 ##
 ## Debian system
 ## Install PowerShell
